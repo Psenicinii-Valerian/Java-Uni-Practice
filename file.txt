@@ -1,0 +1,19 @@
+import java.util.HashMap;
+
+public class HashMapTest {
+    public static void main(String[] args) {
+        HashMap<String, Integer> letterCounter = new HashMap<String, Integer>();
+
+        String text = "Petru are 20 mere de vandut.";
+
+        for(int i=0; i<text.length(); i++) {
+            if (letterCounter.get(Character.toString(text.charAt(i))) == null) {
+                letterCounter.put(Character.toString(text.charAt(i)), 1);
+            } else {
+                letterCounter.put(Character.toString(text.charAt(i)), letterCounter.get(Character.toString(text.charAt(i))) + 1);
+            }
+        }
+
+        letterCounter.forEach((key, value) -> System.out.println("'" + key + "' <=> " + value));
+    }
+}
